@@ -101,17 +101,17 @@ def measure_time(algorithm, text, pattern):
     end = timeit.default_timer()
     return end - start
 
-with open('data/стаття 1.txt', 'r', encoding='utf-8') as f:
+with open('data/article_1.txt', 'r', encoding='utf-8') as f:
     text1 = f.read()
 
-with open('data/стаття 2.txt', 'r', encoding='utf-8') as f:
+with open('data/article_2.txt', 'r', encoding='utf-8') as f:
     text2 = f.read()
 
 patterns = ["алгоритм", "немає у тексті"]
 
 results = []
 
-for text, name in [(text1, 'стаття 1'), (text2, 'стаття 2')]:
+for text, name in [(text1, 'article_1'), (text2, 'article_2')]:
     for pattern in patterns:
         bm_time = measure_time(boyer_moore, text, pattern)
         kmp_time = measure_time(kmp_search, text, pattern)
